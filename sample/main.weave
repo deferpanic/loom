@@ -1,0 +1,88 @@
+aspect {
+  pointcut: execute(main())
+  imports (
+    "fmt"
+  )
+  advice: {
+    before: {
+      fmt.Println("before main")
+    }
+  }
+}
+
+aspect {
+  pointcut: execute(beforeBob())
+  advice: {
+    before: {
+      fmt.Println("before bob")
+    }
+  }
+}
+
+aspect {
+  pointcut: execute(afterSally())
+  advice: {
+    after: {
+      fmt.Println("after sally")
+    }
+  }
+}
+
+aspect {
+  pointcut: execute(aroundTom())
+  advice: {
+    before: {
+      fmt.Println("before tom")
+    }
+    after: {
+      fmt.Println("after tom")
+    }
+  }
+}
+
+aspect {
+  pointcut: execute(innerFors())
+  advice: {
+    before: {
+        for i:=0; i<10; i++ {
+          fmt.Println(i)
+        }
+    }
+  }
+}
+
+aspect {
+  pointcut: execute(retstr())
+  advice: {
+    before: {
+      fmt.Println("yo joe")
+    }
+  }
+}
+
+aspect {
+  pointcut: execute(retbool())
+  advice: {
+    before: {
+      fmt.Println("booooool")
+    }
+  }
+}
+
+aspect {
+  pointcut: execute(other.FuncMaster())
+  advice: {
+    before: {
+      fmt.Println("before in a sub-pkg")
+    }
+  }
+}
+
+aspect {
+  pointcut: execute(FuncMaster())
+  advice: {
+    after: {
+      fmt.Println("after funcmaster flex rother!")
+    }
+  }
+}

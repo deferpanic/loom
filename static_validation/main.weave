@@ -1,0 +1,10 @@
+aspect {
+  pointcut: execute(blah(stuff string))
+  advice: {
+    before: {
+      if stuff == "stuff" {
+        return false
+      }
+    }
+  }
+}

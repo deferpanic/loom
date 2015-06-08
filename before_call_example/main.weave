@@ -1,0 +1,17 @@
+aspect {
+  pointcut: call(getStuff(int i))
+  advice: {
+    before: {
+      fmt.Println("before call")
+    }
+  }
+}
+
+aspect {
+  pointcut: execute(main())
+  advice: {
+    before: {
+      fmt.Println("yo")
+    }
+  }
+}

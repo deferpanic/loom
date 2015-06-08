@@ -1,0 +1,8 @@
+aspect {
+  pointcut: call(strconv.Itoa(int i))
+  advice: {
+    before: {
+      fmt.Println("strconv occuring")
+    }
+  }
+}

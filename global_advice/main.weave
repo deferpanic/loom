@@ -1,0 +1,26 @@
+aspect {
+  pointcut: execute(getStuff(int i))
+  advice: {
+    before: {
+      myCnt += 1
+    }
+  }
+}
+
+aspect {
+  pointcut: execute(*)
+  advice: {
+    before: {
+      var myCnt int =0
+    }
+  }
+}
+
+aspect {
+  pointcut: execute(main())
+  advice: {
+    after: {
+      fmt.Println(myCnt)
+    }
+  }
+}

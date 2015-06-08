@@ -1,0 +1,2 @@
+This is an example adding panic handling in goroutines throgh the
+deferpanic service.
