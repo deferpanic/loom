@@ -1,0 +1,26 @@
+aspect {
+  imports (
+    "time"
+  )
+  pointcut: call(QueryRow(s string))
+  advice: {
+    before: {
+      startTime := time.Now()
+    }
+  }
+}
+
+aspect {
+  imports (
+    "fmt"
+    "time"
+  )
+  pointcut: call(QueryRow(s string))
+  advice: {
+    after: {
+      endTime := time.Now()
+      t := int(((endTime.Sub(startTime)).Nanoseconds() / 1000000))
+      fmt.Println("query took %d seconds", t)
+    }
+  }
+}
