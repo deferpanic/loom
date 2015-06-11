@@ -1,4 +1,7 @@
 aspect {
+  imports (
+    "fmt"
+  )
   pointcut: call(getStuff(int i))
   advice: {
     before: {
@@ -8,6 +11,9 @@ aspect {
 }
 
 aspect {
+  imports (
+    "fmt"
+  )
   pointcut: execute(main())
   advice: {
     before: {
