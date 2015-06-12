@@ -5,17 +5,7 @@ aspect {
   pointcut: call(strconv.Itoa(int i))
   advice: {
     before: {
-      myCnt += 1
-      vizcli.PostVal(myCnt)
-    }
-  }
-}
-
-aspect {
-  pointcut: execute(*)
-  advice: {
-    before: {
-      var myCnt int =0
+      vizcli.IncVal("strconv")
     }
   }
 }
